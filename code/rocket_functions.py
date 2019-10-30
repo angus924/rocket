@@ -3,9 +3,13 @@
 from numba import njit, prange
 import numpy as np
 
-# @njit
 def generate_kernels(input_shape, num_kernels, dtype=np.float32):
-    channels, input_length = input_shape
+    if type(input_shape)==int:
+        channels, input_length = 1, input_shape
+    elif type(input_shape)==tuple:
+        channels, input_length = input_shape
+    else:
+        return
     candidate_lengths = np.array((7, 9, 11))
 
     # initialise kernel parameters
@@ -28,7 +32,6 @@ def generate_kernels(input_shape, num_kernels, dtype=np.float32):
         lengths[i], biases[i], dilations[i], paddings[i] = length, bias, dilation, padding
 
     return weights, lengths, biases, dilations, paddings
-
 
 @njit(fastmath = True)
 def apply_kernel(X, weights, length, bias, dilation, padding):
@@ -63,9 +66,14 @@ def apply_kernel(X, weights, length, bias, dilation, padding):
 
     return _ppv / output_length, _max
 
-@njit(parallel = True, fastmath = True)
 def apply_kernels(X, kernels):
+    if len(X.shape)<3:
+        return _apply_kernels(X[:, None, :], kernels)
+    else:
+        return _apply_kernels(X, kernels)
 
+@njit(parallel = True, fastmath = True)
+def _apply_kernels(X, kernels):
     weights, lengths, biases, dilations, paddings = kernels
 
     num_examples = len(X)
