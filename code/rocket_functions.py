@@ -1,3 +1,9 @@
+# Angus Dempster, Francois Petitjean, Geoff Webb
+
+# Dempster A, Petitjean F, Webb GI (2019) ROCKET: Exceptionally fast and
+# accurate time series classification using random convolutional kernels.
+# arXiv:1910.13051
+
 #A multichannel version of Rocket
 
 from numba import njit, prange
