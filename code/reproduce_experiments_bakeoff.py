@@ -142,8 +142,8 @@ def run(training_data, test_data, num_runs = 10, num_kernels = 10_000):
     results = np.zeros(num_runs)
     timings = np.zeros([4, num_runs]) # training transform, test transform, training, test
 
-    Y_training, X_training = training_data[:, 0].astype(np.int), training_data[:, 1:]
-    Y_test, X_test = test_data[:, 0].astype(np.int), test_data[:, 1:]
+    Y_training, X_training = training_data[:, 0].astype(np.int), training_data[:, 1:].astype(np.float32)
+    Y_test, X_test = test_data[:, 0].astype(np.int), test_data[:, 1:].astype(np.float32)
 
     for i in range(num_runs):
 
@@ -215,7 +215,7 @@ for dataset_name in dataset_names_bakeoff:
         print(f"Compiling ROCKET functions (once only)".ljust(80 - 5, "."), end = "", flush = True)
 
         _ = generate_kernels(100, 10)
-        apply_kernels(np.zeros_like(training_data)[:, 1:], _)
+        apply_kernels(np.zeros_like(training_data)[:, 1:].astype(np.float32), _)
         compiled = True
 
         print("Done.")
