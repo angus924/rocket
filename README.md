@@ -61,13 +61,19 @@ classifier.predict(X_test_transform)
 
 ## Reproducing the Experiments
 
+### UCR Archive
+
+#### 'Bake Off' Datasets
+
 [`reproduce_experiments_bakeoff.py`](./code/reproduce_experiments_bakeoff.py) is intended to allow for reproduction of the experiments on the 'bake off' datasets (using the txt versions of the 'bake off' datasets from [timeseriesclassification.com](http://www.timeseriesclassification.com)).
 
 The required arguments are:
+
 * `-i` or `--input_path`, the parent directory for the datasets (probably something like`.../Univariate_arff/`); and
 * `-o` or `--output_path`, the directory in which to save the results.
 
 The optional arguments are:
+
 * `-n` or `--num_runs`, the number of runs (default 10); and
 * `-k` or `--num_kernels`, the number of kernels (default 10,000).
 
@@ -79,6 +85,18 @@ Examples:
 python reproduce_experiments_bakeoff.py -i ./Univariate_arff/ -o ./
 python reproduce_experiments_bakeoff.py -i ./Univariate_arff/ -o ./ -n 1 -k 100
 ```
+
+#### Additional Datasets
+
+*(Forthcoming...)*
+
+### Scalability
+
+*(Forthcoming...)*
+
+## Contributing
+
+For the time being, this repository will be kept 'as is', to reflect the code used for the experiments in our paper.  We intend to make a development version of ROCKET available shortly.
 
 ## Acknowledgements
 
