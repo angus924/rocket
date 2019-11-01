@@ -59,6 +59,8 @@ X_test_transform = apply_kernels(X = X_test, kernels = kernels)
 classifier.predict(X_test_transform)
 ```
 
+**Note**: The current setup assumes that input time series have been normalised (following standard practice, such that each time series has a mean of zero and a standard deviation of one).  Accordingly, before using `apply_kernels(...)`, time series should be normalised to have a zero mean and unit standard deviation.
+
 ## Reproducing the Experiments
 
 ### UCR Archive
