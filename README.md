@@ -62,7 +62,7 @@ classifier.predict(X_test_transform)
 **Note**: Unless already normalised (time series may already be normalised for some datasets), time series should be normalised to have a zero mean and unit standard deviation before using `apply_kernels(...)`.  For example:
 
 ```python
-# if not already normalised, normalise time series (for both training and test)
+# if not already normalised, normalise time series (both training and test data)
 X_training = (X_training - X_training.mean(axis = 1, keepdims = True)) / X_training.std(axis = 1, keepdims = True)
 ```
 
