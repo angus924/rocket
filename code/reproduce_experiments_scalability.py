@@ -287,7 +287,7 @@ for num_training_examples in all_num_training_examples:
     Y_test, X_test = test_data[:, 0].astype(np.int), test_data[:, 1:]
 
     # normalise and transform test data
-    X_test = ((X_test - X_test.mean(axis = 1, keepdims = True)) / X_test.std(axis = 1, keepdims = True)) # normalise time series
+    X_test = (X_test - X_test.mean(axis = 1, keepdims = True)) / X_test.std(axis = 1, keepdims = True) # normalise time series
     X_test_transform = apply_kernels(X_test, kernels)
     X_test_transform = (X_test_transform - f_mean) / f_std # normalise transformed features
 
