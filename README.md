@@ -35,10 +35,14 @@ To use ROCKET, you will need:
 
 * Python (3.7+);
 * Numba (0.45.1+);
-* NumPy; and
+* NumPy;
 * scikit-learn (or equivalent).
 
 All of these should be ready to go in [Anaconda](https://www.anaconda.com/distribution/).
+
+For `reproduce_experiments_bakeoff.py`, we also use pandas (included in Anaconda).
+
+For `reproduce_experiments_scalability.py`, you will also need [PyTorch](https://pytorch.org/) (1.2+).
 
 ## Basic Use
 
@@ -99,7 +103,27 @@ python reproduce_experiments_bakeoff.py -i ./Univariate_arff/ -o ./ -n 1 -k 100
 
 ### Scalability
 
-*(Forthcoming...)*
+[`reproduce_experiments_scalability.py`](./code/reproduce_experiments_scalability.py) is intended to:
+
+* allow for reproduction of the scalability experiments (in terms of dataset size); and
+* serve as a template for integrating ROCKET with logistic / softmax regression and stochastic gradient descent (or, e.g., Adam) for other large datasets using PyTorch.
+
+The required arguments are:
+
+* `-tr` or `--training_path`, the training dataset (csv);
+* `-te` or `--test_path`, the test dataset (csv);
+* `-o` or `--output_path`, the directory in which to save the results;
+* `-k` or `--num_kernels`, the number of kernels.
+
+**Note**: It may be necessary to adapt the code to your dataset in terms of dataset size and structure, regularisation, etc.
+
+Examples:
+
+```bash
+python reproduce_experiments_scalability.py -tr training_data.csv -te test_data.csv -o ./ -k 100
+python reproduce_experiments_scalability.py -tr training_data.csv -te test_data.csv -o ./ -k 1_000
+python reproduce_experiments_scalability.py -tr training_data.csv -te test_data.csv -o ./ -k 10_000
+```
 
 ## Contributing
 
