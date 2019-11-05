@@ -100,12 +100,13 @@ dataset_names_additional = \
 
 # if variable length time series are used "as is", the effective length of some
 # kernels, including dilation (if set with reference to, e.g., the longest
-# time series in a dataset, the default behaviour), maybe larger than some input
-# time series; this is irrelevant if padding is applied; even where padding is
-# not applied, this should only affect a minority of kernels (dilation for most
-# kernels is small); the default behaviour of *apply_kernels_jagged(...)* is to
-# "skip" incompatible kernels (i.e., where the effective size of the kernel
-# including dilation is larger than the input time series including padding)
+# time series in a dataset, the default behaviour), may be larger than some
+# input time series; this is irrelevant if padding is applied; even where
+# padding is not applied, this should only affect a minority of kernels
+# (dilation for most kernels is relatively small); the default behaviour of
+# *apply_kernels_jagged(...)* is to "skip" incompatible kernels (i.e., where the
+# effective size of the kernel including dilation is larger than the input time
+# series including padding)
 
 @njit(parallel = True, fastmath = True)
 def apply_kernels_jagged(X, kernels, input_lengths):
