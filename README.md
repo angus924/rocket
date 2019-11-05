@@ -107,7 +107,7 @@ python reproduce_experiments_bakeoff.py -i ./Univariate_arff/ -o ./ -n 1 -k 100
 
 The arguments are the same as for `reproduce_experiments_bakeoff.py`.
 
-Again, As ROCKET is nondeterministic, results will differ between runs.  However, any single run should produce representative results.
+Again, as ROCKET is nondeterministic, results will differ between runs.  However, any single run should produce representative results.
 
 Examples:
 
