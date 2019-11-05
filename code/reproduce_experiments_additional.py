@@ -135,6 +135,7 @@ def apply_kernels_jagged(X, kernels, input_lengths):
 
 def run_additional(training_data, test_data, num_runs = 10, num_kernels = 10_000):
 
+    # assumes variable length time series are padded with nan
     get_input_lengths = lambda X : X.shape[1] - (~np.isnan(np.flip(X, 1))).argmax(1)
 
     def rescale(X, reference_length):
