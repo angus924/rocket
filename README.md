@@ -99,7 +99,22 @@ python reproduce_experiments_bakeoff.py -i ./Univariate_arff/ -o ./ -n 1 -k 100
 
 #### Additional Datasets
 
-*(Forthcoming...)*
+[`reproduce_experiments_additional.py`](./code/reproduce_experiments_additional.py) is intended to allow for reproduction of the experiments on the additional 2018 datasets (using the txt versions of the relevant datasets from [timeseriesclassification.com](http://www.timeseriesclassification.com)).  The main differences from `reproduce_experiments_bakeoff.py` relate to:
+
+* normalising time series;
+* handling missing values (missing values are interpolated); and
+* handing variable length time series (variable length time series are rescaled or used "as is" as determined by 10-fold cross-validation).
+
+The arguments are the same as for `reproduce_experiments_bakeoff.py`.
+
+Again, As ROCKET is nondeterministic, results will differ between runs.  However, any single run should produce representative results.
+
+Examples:
+
+```bash
+python reproduce_experiments_additional.py -i ./Univariate_arff/ -o ./
+python reproduce_experiments_additional.py -i ./Univariate_arff/ -o ./ -n 1 -k 100
+```
 
 ### Scalability
 
