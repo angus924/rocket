@@ -160,7 +160,7 @@ def run_additional(training_data, test_data, num_runs = 10, num_kernels = 10_000
     variable_lengths = False
 
     # handle three cases: (1) same lengths, no missing values; (2) same lengths,
-    # missing values; and (3) variable lengths, no missing values.
+    # missing values; and (3) variable lengths, no missing values
 
     if np.any(np.isnan(X_training)):
 
