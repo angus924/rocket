@@ -48,6 +48,8 @@ For `reproduce_experiments_scalability.py`, you will also need [PyTorch](https:/
 
 The key ROCKET functions, `generate_kernels(...)` and `apply_kernels(...)`, are contained in [`rocket_functions.py`](./code/rocket_functions.py).  A worked example is provided in the [demo](./code/demo.ipynb) notebook.
 
+**Note**: For larger datasets, you should follow the example in [`reproduce_experiments_scalability.py`](./code/reproduce_experiments_scalability.py).  (Updated documentation is forthcoming.)
+
 Basic use follows this pattern:
 
 ```python
