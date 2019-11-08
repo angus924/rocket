@@ -74,9 +74,9 @@ def apply_kernel(X, weights, length, bias, dilation, padding):
 
 def apply_kernels(X, kernels):
     if len(X.shape)<3:
-        return _apply_kernels(X[:, None, :], kernels)
+        return _apply_kernels(X[:, None, :].astype(np.float32), kernels)
     else:
-        return _apply_kernels(X, kernels)
+        return _apply_kernels(X.astype(np.float32), kernels)
 
 @njit(parallel = True, fastmath = True)
 def _apply_kernels(X, kernels):
