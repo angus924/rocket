@@ -2,7 +2,7 @@
 
 ***ROCKET: Exceptionally fast and accurate time series classification using random convolutional kernels.***
 
-[Data Mining and Knowledge Discovery]() / [arXiv:1910.13051](https://arxiv.org/abs/1910.13051) (preprint)
+[Data Mining and Knowledge Discovery](https://link.springer.com/article/10.1007/s10618-020-00701-z) / [arXiv:1910.13051](https://arxiv.org/abs/1910.13051) (preprint)
 
 > <div align="justify">Most methods for time series classification that attain state-of-the-art accuracy have high computational complexity, requiring significant training time even for smaller datasets, and are intractable for larger datasets.  Additionally, many existing methods focus on a single type of feature such as shape or frequency.  Building on the recent success of convolutional neural networks for time series classification, we show that simple linear classifiers using random convolutional kernels achieve state-of-the-art accuracy with a fraction of the computational expense of existing methods.  Using this method, it is possible to train and test a classifier on all 85 ‘bake off’ datasets in the UCR archive in < 2 h, and it is possible to train a classifier on a large dataset of more than one million time series in approximately 1 h.</div>
 
