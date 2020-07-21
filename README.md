@@ -66,6 +66,37 @@ X_test_transform = apply_kernels(X_test, kernels)
 predictions = classifier.predict(X_test_transform)
 ```
 
+## Reproducing the Experiments
+
+### [`reproduce_experiments_ucr.py`](code/reproduce_experiments_ucr.py)
+
+```
+Arguments:
+-d --dataset_names : txt file of dataset names
+-i --input_path    : parent directory for datasets
+-o --output_path   : path for results
+-n --num_runs      : number of runs (optional, default 10)
+-k --num_kernels   : number of kernels (optional, default 10,000)
+
+Examples:
+> python reproduce_experiments_ucr.py -d bakeoff.txt -i ./Univariate_arff -o ./
+> python reproduce_experiments_ucr.py -d additional.txt -i ./Univariate_arff -o ./ -n 1 -k 1000
+```
+
+### [`reproduce_experiments_scalability.py`](code/reproduce_experiments_scalability.py)
+
+```
+Arguments:
+-tr --training_path : training dataset (csv)
+-te --test_path     : test dataset (csv)
+-o  --output_path   : path for results
+-k  --num_kernels   : number of kernels
+
+Examples:
+> python reproduce_experiments_scalability.py -tr training.csv -te test.csv -o ./ -k 100
+> python reproduce_experiments_scalability.py -tr training.csv -te test.csv -o ./ -k 1000
+```
+
 ## Acknowledgements
 
 We thank Professor Eamonn Keogh and all the people who have contributed to the UCR time series classification archive.  Figures in our paper showing the ranking of different classifiers and variants of ROCKET were produced using code from [Ismail Fawaz et al. (2019)](https://github.com/hfawaz/cd-diagram).
