@@ -1,4 +1,4 @@
-# ROCKET
+# ROCKET [+ MINIROCKET](https://github.com/angus924/minirocket)
 
 ***ROCKET: Exceptionally fast and accurate time series classification using random convolutional kernels.***
 
@@ -21,6 +21,10 @@ Please cite as:
 ## `sktime`
 
 An implementation of ROCKET (with basic multivariate capability) is available through [sktime](https://github.com/alan-turing-institute/sktime).  See the [examples](https://github.com/alan-turing-institute/sktime/blob/master/examples/rocket.ipynb).
+
+## [MINIROCKET](https://github.com/angus924/minirocket) \*NEW\*
+
+[MINIROCKET](https://github.com/angus924/minirocket) is up to 75&times; faster than ROCKET on larger datasets.
 
 ## Results
 
