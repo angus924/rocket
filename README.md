@@ -1,4 +1,6 @@
-# ROCKET [+ MINIROCKET](https://github.com/angus924/minirocket)
+[**`ROCKET`**](https://github.com/angus924/rocket) &middot; [`MINIROCKET`](https://github.com/angus924/minirocket) &middot; [`HYDRA`](https://github.com/angus924/hydra)
+
+# ROCKET
 
 ***ROCKET: Exceptionally fast and accurate time series classification using random convolutional kernels.***
 
