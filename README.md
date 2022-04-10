@@ -12,11 +12,13 @@ Please cite as:
 
 ```bibtex
 @article{dempster_etal_2020,
-  author = {Dempster, Angus and Petitjean, Fran\c{c}ois and Webb, Geoffrey I},
-  title = {ROCKET: Exceptionally fast and accurate time classification using random convolutional kernels},
-  year = {2020},
+  author  = {Dempster, Angus and Petitjean, Fran\c{c}ois and Webb, Geoffrey I},
+  title   = {{ROCKET}: Exceptionally Fast and Accurate Time Series Classification Using Random Convolutional Kernels},
   journal = {Data Mining and Knowledge Discovery},
-  doi = {https://doi.org/10.1007/s10618-020-00701-z}
+  year    = {2020},
+  volume  = {34},
+  number  = {5},
+  pages   = {1454--1495}
 }
 ```
 
